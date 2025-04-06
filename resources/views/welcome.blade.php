@@ -77,6 +77,7 @@
     <p id="thank-you" style="text-align: center; font-size: 1.25rem; margin-top: 1rem; display: none;">
         Thanks for voting!
     </p>    
+    
 
     <script>
         const hasVoted = sessionStorage.getItem('hasVoted');
