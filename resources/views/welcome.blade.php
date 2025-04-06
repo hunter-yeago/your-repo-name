@@ -62,12 +62,12 @@
     <section class="voting-div" aria-label="vote on the question of if my friends face is pear shaped or not - I mean you should probably just vote yes, I wouldn't go out of my way to build an entire website if it wasn't">
         
         <div>
-            <p class="vote-count">Votes: <span id="votes-B">{{ $optionB ? $optionB->vote_count : 0 }}</span></p>
+            <p class="vote-count">"No" Votes: <span id="votes-B">{{ $optionB ? $optionB->vote_count : 0 }}</span></p>
             <button onclick="vote('Option B')">No</button>
         </div>
 
         <div>
-            <p class="vote-count">Votes: <span id="votes-A">{{ $optionA ? $optionA->vote_count : 0 }}</span></p>
+            <p class="vote-count">"Yes" Votes: <span id="votes-A">{{ $optionA ? $optionA->vote_count : 0 }}</span></p>
             <button onclick="vote('Option A')">Yes</button>
         </div>
 
@@ -77,7 +77,7 @@
     <p id="thank-you" style="text-align: center; font-size: 1.25rem; margin-top: 1rem; display: none;">
         Thanks for voting!
     </p>    
-    
+
 
     <script>
         const hasVoted = sessionStorage.getItem('hasVoted');
