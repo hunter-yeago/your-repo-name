@@ -27,7 +27,10 @@ class VoteController extends Controller
         // Find the vote record for the selected option
         $vote = Vote::where('option_name', $option)->first();
 
+        Log::info('$vote is: ' . $vote);  // Log the option received
+        
         if ($vote) {
+            Log::info('firing inside if');  // Log the option received
             $vote->increment('vote_count'); // Increment the vote count
             return response()->json(['vote_count' => $vote->vote_count]);
         }

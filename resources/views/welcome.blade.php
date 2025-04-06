@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Does my friends face look somewhat pear shaped?</title>
 </head>
 
@@ -97,6 +98,7 @@
             })
             .then(res => res.json())
             .then(data => {
+                console.log('data:', data);  // Add this for debugging
                 if (data.vote_count !== undefined) {
                     document.getElementById(`votes-${option === 'Option A' ? 'A' : 'B'}`).innerText = data.vote_count;
                     sessionStorage.setItem('hasVoted', true);
