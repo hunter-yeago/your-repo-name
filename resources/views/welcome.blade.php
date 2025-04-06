@@ -81,12 +81,11 @@
 
     <script>
         const hasVoted = sessionStorage.getItem('hasVoted');
-    
+        
         if (hasVoted) {
             hideVoteButtons();
             showThankYou();
         }
-
     
         function vote(option) {
             fetch(`/vote/${option}`, {
@@ -104,8 +103,11 @@
                     hideVoteButtons();
                     showThankYou();
                 } else {
-                    alert('There was an error!');
+                    showError('There was an error updating the vote count.');
                 }
+            })
+            .catch(error => {
+                showError('There was an error with the network request.');
             });
         }
     
@@ -116,7 +118,19 @@
         function showThankYou() {
             document.getElementById('thank-you').style.display = 'block';
         }
+    
+        function showError(message) {
+            const errorMessage = document.createElement('p');
+            errorMessage.style.color = 'red';
+            errorMessage.style.fontSize = '1.25rem';
+            errorMessage.style.textAlign = 'center';
+            errorMessage.style.marginTop = '1rem';
+            errorMessage.textContent = message;
+    
+            document.body.appendChild(errorMessage);
+        }
     </script>
+    
     
     
 </body>
