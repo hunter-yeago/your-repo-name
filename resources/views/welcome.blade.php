@@ -46,7 +46,7 @@
 </style>
 <body>
         
-    <h1>Does my friends face look somewhat pear shaped?</h1>
+    <h1>Does my friends face look somewhat pear shaped? t</h1>
     <section class="voting-section" aria-label="">
         
         <div class="image-div">
@@ -86,7 +86,7 @@
             hideVoteButtons();
             showThankYou();
         }
-        
+
     
         function vote(option) {
             fetch(`/vote/${option}`, {
