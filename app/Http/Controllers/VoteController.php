@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class VoteController extends Controller
 {
@@ -20,6 +21,9 @@ class VoteController extends Controller
     // Handle voting for Option A or Option B
     public function vote($option)
     {
+
+        Log::info('Vote received for: ' . $option);  // Log the option received
+
         // Find the vote record for the selected option
         $vote = Vote::where('option_name', $option)->first();
 
