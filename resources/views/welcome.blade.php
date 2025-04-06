@@ -86,6 +86,7 @@
             hideVoteButtons();
             showThankYou();
         }
+        
     
         function vote(option) {
             fetch(`/vote/${option}`, {
